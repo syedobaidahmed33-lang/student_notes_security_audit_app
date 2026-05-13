@@ -1,0 +1,13 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+<h2>{{ page_title }}</h2>
+
+<form method="post">
+    <!-- CSRF token protects this POST form from cross-site request forgery. -->
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="button" type="submit">Save</button>
+    <a href="{% url 'notes:note_list' %}">Cancel</a>
+</form>
+{% endblock %}

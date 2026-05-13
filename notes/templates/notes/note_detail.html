@@ -1,0 +1,15 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+<article>
+    <!-- SAFE: Django auto-escapes user-supplied title and content. -->
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.content }}</p>
+    <p class="muted">Last updated: {{ note.updated_at }}</p>
+</article>
+<p>
+    <a class="button" href="{% url 'notes:note_update' note.pk %}">Edit</a>
+    <a class="button danger" href="{% url 'notes:note_delete' note.pk %}">Delete</a>
+    <a href="{% url 'notes:note_list' %}">Back to list</a>
+</p>
+{% endblock %}

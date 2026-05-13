@@ -1,0 +1,28 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+<div class="top-actions">
+    <h2>All Notes</h2>
+    <a class="button" href="{% url 'notes:note_create' %}">Create New Note</a>
+</div>
+
+<form method="get">
+    <label for="q">Search notes safely using Django ORM</label>
+    <input id="q" type="text" name="q" value="{{ search }}" placeholder="Search by title">
+    <button class="button" type="submit">Search</button>
+</form>
+
+{% for note in notes %}
+    <article class="note-card">
+        <!-- SAFE: Django auto-escapes these variables. User text is shown as text, not executable HTML. -->
+        <h3><a href="{% url 'notes:note_detail' note.pk %}">{{ note.title }}</a></h3>
+        <p>{{ note.content|truncatewords:30 }}</p>
+        <p class="muted">Created: {{ note.created_at }}</p>
+    </article>
+{% empty %}
+    <p>No notes found.</p>
+{% endfor %}
+
+<!-- UNSAFE example for audit only. Do not use with untrusted content: -->
+<!-- <p>{{ note.content|safe }}</p> -->
+{% endblock %}
