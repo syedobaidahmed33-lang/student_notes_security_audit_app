@@ -5,14 +5,13 @@
 Upload one PDF to Populi/Blackboard that contains:
 
 1. Public GitHub repository link
-2. Screenshot of app running in browser
-3. Screenshot of `student_notes/settings.py` showing environment variables, DEBUG, ALLOWED_HOSTS, and secure cookie settings
-4. Screenshot of `notes/views.py` showing SQL injection safe ORM comment and cached view
-5. Screenshot of `note_form.html` showing `{% csrf_token %}`
-6. Screenshot of `note_confirm_delete.html` showing `{% csrf_token %}`
-7. Screenshot of template auto-escaping in `note_list.html` or `note_detail.html`
-8. Screenshot of `SECURITY.md`
-9. Screenshot of README scalability section
+2. Screenshot of `student_notes/settings.py` showing environment variables, DEBUG, ALLOWED_HOSTS, and secure cookie settings
+3. Screenshot of `notes/views.py` showing SQL injection safe ORM comment and cached view
+4. Screenshot of `note_form.html` showing `{% csrf_token %}`
+5. Screenshot of `note_confirm_delete.html` showing `{% csrf_token %}`
+6. Screenshot of template auto-escaping in `note_list.html` or `note_detail.html`
+7. Screenshot of `SECURITY.md`
+8. Screenshot of README scalability section
 
 ## GitHub Steps
 
